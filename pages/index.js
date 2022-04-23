@@ -91,7 +91,7 @@ export default function Home() {
             opacity: 1,
           }}
           transition={{
-            delay: 0.75,
+            delay: 0.5,
             duration: 0.5,
           }}
         >
@@ -112,8 +112,8 @@ export default function Home() {
           onBlur={handleBlur}
           onKeyDown={handleKeyDown}
         />
-        <motion.input
-          className="cursor-pointer p-2 rounded-md"
+        <motion.button
+          className="cursor-pointer p-2"
           type="submit"
           whileHover={{
             fontWeight: "bold",
@@ -123,8 +123,9 @@ export default function Home() {
             scale: 0.9,
           }}
           onClick={submit}
-          value="Open"
-        />
+        >
+          Open
+        </motion.button>
       </div>
       <div className="pt-8 pl-2 w-48">
         {helpTextList.map((helpText, index) => (
