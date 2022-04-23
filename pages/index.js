@@ -114,7 +114,7 @@ export default function Home() {
         />
         <motion.button
           className="cursor-pointer p-2"
-          type="submit"
+          type="button"
           whileHover={{
             fontWeight: "bold",
             scale: 1.1,
@@ -123,6 +123,7 @@ export default function Home() {
             scale: 0.9,
           }}
           onClick={submit}
+          aria-label="Open"
         >
           Open
         </motion.button>

@@ -14,6 +14,8 @@ function ThemeSwitch() {
           theme === "dark" || resolvedTheme === "dark" ? "light" : "dark"
         );
       }}
+      role="button"
+      aria-label="Switch Theme"
     >
       {mounted && <Icon>{theme === "dark" ? "moon" : "sun"}</Icon>}
     </div>
