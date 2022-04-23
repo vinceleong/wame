@@ -1,5 +1,6 @@
 import Icon from "components/Icon";
 import ThemeSwitch from "components/ThemeSwitch";
+import SEO from "components/SEO";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
@@ -51,6 +52,11 @@ function MainLayout({ children }) {
   return (
     <div className="flex h-screen flex-col justify-between">
       {header}
+      <SEO
+        title="Wame"
+        description="Open whatsapp chat without creating contact"
+        ogType="website"
+      />
       <div className="h-full w-full mb-auto flex justify-center">
         <div className="w-full xs:max-w-xs sm:max-w-xl md:max-w-2xl">
           {children}
