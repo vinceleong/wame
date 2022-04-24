@@ -77,7 +77,7 @@ export default function Home() {
             opacity: 1,
           }}
           transition={{
-            duration: 0.5,
+            duration: 1,
           }}
         >
           Open Whatsapp Chat
@@ -91,8 +91,8 @@ export default function Home() {
             opacity: 1,
           }}
           transition={{
-            delay: 0.5,
-            duration: 0.5,
+            delay: 1,
+            duration: 1,
           }}
         >
           &nbsp;Without Adding Contact
