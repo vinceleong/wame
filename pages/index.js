@@ -98,9 +98,11 @@ export default function Home() {
           &nbsp;Without Adding Contact
         </motion.p>
       </div>
-      <div className="flex justify-between p-3 border-2 rounded-md border-neutral-200 dark:border-[#FFFFFF]">
+      <div className="flex justify-between items-center p-3 border-2 rounded-md border-neutral-200 dark:border-[#FFFFFF]">
+        {/* <div className="pr-3">(+60)</div>
+        <div className="z-[1] fixed bg h-full w-full">Test Modal</div> */}
         <input
-          className="flex bg-transparent outline-0 focus:outline-none"
+          className="bg-transparent outline-0 focus:outline-none grow"
           type="text"
           pattern="[0-9]*"
           inputMode="numeric"
