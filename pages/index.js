@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Icon from "components/Icon";
+import CountrySelectorDialog from "components/CountrySelectorDialog";
 
 function PhoneNumberRule({ text, icon, iconColor }) {
   return (
@@ -30,8 +31,18 @@ export default function Home() {
     },
   ];
 
+  const [countryCode, setCountryCode] = useState("60");
   const [mobileNumber, setMobileNumber] = useState("");
   const [helpVisible, setHelpVisible] = useState(false);
+  const [countryDialogState, setCountryDialogState] = useState({
+    open: false,
+  });
+
+  const closeCountryDialog = () => {
+    setCountryDialogState({
+      open: false,
+    });
+  };
 
   const onMobileNumberChange = (e) => {
     setMobileNumber(e.target.value);
@@ -56,10 +67,10 @@ export default function Home() {
   };
 
   const submit = () => {
-    if (!mobileNumber) return;
+    if (!mobileNumber || !countryCode) return;
     const trimmedMobileNumber = mobileNumber.trim();
     window.open(
-      `https://wa.me/${trimmedMobileNumber}`,
+      `https://wa.me/${countryCode + trimmedMobileNumber}`,
       "_blank",
       "noopener,noreferrer"
     );
@@ -98,9 +109,25 @@ export default function Home() {
           &nbsp;Without Adding Contact
         </motion.p>
       </div>
-      <div className="flex justify-between items-center p-3 border-2 rounded-md border-neutral-200 dark:border-[#FFFFFF]">
-        {/* <div className="pr-3">(+60)</div>
-        <div className="z-[1] fixed bg h-full w-full">Test Modal</div> */}
+      <div className="flex justify-between items-center p-3 rounded-md border-2 border-neutral-200 dark:border-[#FFFFFF]">
+        <div
+          className="pr-3 cursor-pointer"
+          onClick={() => {
+            setCountryDialogState({
+              open: true,
+            });
+          }}
+        >
+          {`(+${countryCode})`}
+        </div>
+        {countryDialogState.open && (
+          <CountrySelectorDialog
+            value={countryCode}
+            setValue={setCountryCode}
+            open={countryDialogState.open}
+            onClose={closeCountryDialog}
+          />
+        )}
         <input
           className="bg-transparent outline-0 focus:outline-none grow"
           type="text"
