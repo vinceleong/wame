@@ -15,17 +15,17 @@ function PhoneNumberRule({ text, icon, iconColor }) {
 export default function Home() {
   const helpTextList = [
     {
-      text: "(+60)601111931731",
+      text: "(+60)60123456789",
       icon: "x",
       iconColor: "text-red-500",
     },
     {
-      text: "(+60)01111931731",
+      text: "(+60)0123456789",
       icon: "x",
       iconColor: "text-red-500",
     },
     {
-      text: "(+60)1111931731",
+      text: "(+60)123456789",
       icon: "check",
       iconColor: "text-green-500",
     },
