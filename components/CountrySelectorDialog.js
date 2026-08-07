@@ -23,7 +23,7 @@ function CountrySelectorDialog({ value, setValue, open, onClose }) {
 
   return (
     <Modal open={open} onClose={onClose}>
-      <div className="sticky top-0 mb-2 bg-white dark:bg-black rounded-md border-2 border-neutral-200 dark:border-[#FFFFFF] hidden md:block md:min-w-[400px]">
+      <div className="sticky top-0 mb-2 bg-white dark:bg-black rounded-md border-2 border-neutral-200 dark:border-[#FFFFFF] min-w-[400px]">
         <div className="flex flex-row items-center justify-between">
           <input
             autoFocus

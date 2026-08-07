@@ -1,11 +1,17 @@
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 import Icon from "./Icon";
 import { useTheme } from "next-themes";
+
+const emptySubscribe = () => () => {};
+
 function ThemeSwitch() {
-  const [mounted, setMounted] = useState();
   const { theme, setTheme, resolvedTheme } = useTheme();
-  useEffect(() => setMounted(true), []);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
 
   return (
     <div
